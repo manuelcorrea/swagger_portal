@@ -1,0 +1,50 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "Testing Endpoint Platform Software"
+    },
+    "host": "zuultest-cors.elasticbeanstalk.com",
+    "paths": {
+        "/core/testingendpoint": {
+            "get": {
+                "description": "Team info\n",
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "description": "version string",
+                        "required": false,
+                        "type": "string"
+                    },{
+                    "name": "Content-Type",
+                    "in": "header",
+                    "description": "content-type",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema": {
+                            "title": "TeamInfo",
+                            "type": "object",
+                            "properties": {
+                                "team": {
+                                    "type": "string"
+                                },
+                                "version": {
+                                    "type": "string"
+                                },
+                                "ip": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
